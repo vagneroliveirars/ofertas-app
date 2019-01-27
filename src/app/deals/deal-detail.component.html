@@ -1,0 +1,79 @@
+<div class="container">
+
+  <h2>Salvar oferta</h2>
+
+  <div [ngClass]="classesCss" role="alert" *ngIf="message">
+		<span [ngSwitch]="message.type">
+			<strong *ngSwitchCase="'danger'">Erro!</strong>
+			<strong *ngSwitchCase="'warning'">Alerta!</strong>
+			<strong *ngSwitchCase="'success'">Sucesso!</strong>
+			<strong *ngSwitchDefault>Informação!!</strong>
+		</span>
+    {{ message.text }}
+  </div>
+
+  <form (ngSubmit)="onSubmit()" #dealForm="ngForm" novalidate>
+
+    <div [ngClass]="getFormGroupClass(title.valid, title.pristine)">
+      <label for="title" class="form-control-label">Título</label>
+      <input type="text" placeholder="Insira o título"
+             [ngClass]="getFormControlClass(title.valid, title.pristine)"
+             required
+             #title="ngModel"
+             name="title"
+             [(ngModel)]="deal.title"/>
+      <div class="form-control-feedback" [hidden]="title.valid || title.pristine">O campo título é obrigatório</div>
+    </div>
+
+    <div [ngClass]="getFormGroupClass(text.valid, text.pristine)">
+      <label for="text" class="form-control-label">Texto</label>
+      <input type="text" placeholder="Insira o texto"
+             [ngClass]="getFormControlClass(text.valid, text.pristine)"
+             required
+             #text="ngModel"
+             name="text"
+             [(ngModel)]="deal.text"/>
+      <div class="form-control-feedback" [hidden]="text.valid || text.pristine">O campo texto é obrigatório</div>
+    </div>
+
+    <div [ngClass]="getFormGroupClass(publishDate.valid, publishDate.pristine)">
+      <label for="publishDate" class="form-control-label">Data hora publicação</label>
+      <input type="datetime-local" placeholder="Insira a data hora de publicação"
+             [ngClass]="getFormControlClass(publishDate.valid, publishDate.pristine)"
+             required
+             #publishDate="ngModel"
+             name="publishDate"
+             [(ngModel)]="deal.publishDate"/>
+      <div class="form-control-feedback" [hidden]="publishDate.valid || publishDate.pristine">O campo data de publicação é obrigatório</div>
+    </div>
+
+    <div [ngClass]="getFormGroupClass(endDate.valid, endDate.pristine)">
+      <label for="endDate" class="form-control-label">Data hora fim</label>
+      <input type="datetime-local" placeholder="Insira a data hora fim"
+             [ngClass]="getFormControlClass(endDate.valid, endDate.pristine)"
+             required
+             #endDate="ngModel"
+             name="endDate"
+             [(ngModel)]="deal.endDate"/>
+      <div class="form-control-feedback" [hidden]="endDate.valid || endDate.pristine">O campo data de fim é obrigatório</div>
+    </div>
+
+    <div [ngClass]="getFormGroupClass(type.valid, type.pristine)">
+      <label for="type" class="form-control-label">Tipo</label>
+      <select [(ngModel)]="deal.type.id"
+              [ngClass]="getFormControlClass(type.valid, type.pristine)"
+              required
+              #type="ngModel"
+              name="type">
+        <option value="LOCAL">Local</option>
+        <option value="PRODUCT">Produto</option>
+        <option value="TRAVEL">Viagem</option>
+      </select>
+      <div class="form-control-feedback" [hidden]="type.valid || type.pristine">O campo tipo é obrigatório</div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!dealForm.form.valid">Salvar</button>
+    <a class="btn btn-secondary" (click)="goBack()">Voltar</a>
+  </form>
+
+</div>
