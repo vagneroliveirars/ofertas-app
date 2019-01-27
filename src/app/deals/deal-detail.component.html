@@ -60,7 +60,7 @@
 
     <div [ngClass]="getFormGroupClass(type.valid, type.pristine)">
       <label for="type" class="form-control-label">Tipo</label>
-      <select [(ngModel)]="deal.type.id"
+      <select [(ngModel)]="deal.type"
               [ngClass]="getFormControlClass(type.valid, type.pristine)"
               required
               #type="ngModel"

@@ -1,4 +1,3 @@
-import { DealsModule } from './deals.module';
 import { Deal } from './deal.model';
 import { DealService } from './deal.service';
 import { Component, OnInit } from '@angular/core';
@@ -62,6 +61,9 @@ export class DealDetailComponent implements OnInit {
 
     onSubmit(): void {
         let promise;
+
+        this.deal.publishDate = new Date(this.deal.publishDate);
+        this.deal.endDate = new Date(this.deal.endDate);
 
         if (this.isNew) {
             promise = this.dealService.create(this.deal);
