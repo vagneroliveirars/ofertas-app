@@ -16,7 +16,9 @@ To get Node.js, go to [nodejs.org](https://nodejs.org/).
 Run as root on RHEL, CentOS, CloudLinux or Fedora to install Node.js and npm:
 
 `$> sudo dnf install -y gcc-c++ make`
+
 `$> curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -`
+
 `$> sudo dnf install nodejs`
 
 # Run the application
@@ -28,6 +30,7 @@ Go to the workspace folder (ofertas-peixe-urbano-app).
 Launch the server:
 
 `$> npm install`
+
 `$> npm start`
 
 Open your browser on http://localhost:4200/
