@@ -29,7 +29,7 @@ export class DealDetailComponent implements OnInit {
         this.deal = new Deal('', '', '', null, null, null, '', null, '', []);
 
         this.route.params.forEach((params: Params) => {
-            let id: number = +params['id'];
+            let id: string = params['id'];
 
             if (id) {
                 this.isNew = false;

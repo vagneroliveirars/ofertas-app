@@ -22,7 +22,7 @@ export class DealService implements ServiceInterface<Deal> {
             .catch(this.handleError);
     }
 
-    find(id: number): Promise<Deal> {
+    find(id: string): Promise<Deal> {
         const url = `${this.dealsUrl}/${id}`;
 
         return this.http.get(url)
