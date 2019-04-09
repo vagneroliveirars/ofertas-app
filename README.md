@@ -1,8 +1,8 @@
-# OfertasPeixeUrbanoApp
+# OfertasApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
-`$> git clone https://github.com/vagneroliveirars/ofertas-peixe-urbano-app.git`
+`$> git clone https://github.com/vagneroliveirars/ofertas-app.git`
 
 # Prerequisites
 
@@ -23,9 +23,9 @@ Run as root on RHEL, CentOS, CloudLinux or Fedora to install Node.js and npm:
 
 # Run the application
 
-Go to the workspace folder (ofertas-peixe-urbano-app).
+Go to the workspace folder (ofertas-app).
 
-`$> cd ofertas-peixe-urbano-app`
+`$> cd ofertas-app`
 
 Launch the server:
 
